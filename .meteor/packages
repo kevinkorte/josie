@@ -22,6 +22,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 accounts-password       # Meteor package for dealing with all things passwords
 accounts-base           # Meteor base package for dealing with accounts
 check                   # The ever important check package
+meteortoys:allthings
 
 kadira:flow-router
 kadira:blaze-layout

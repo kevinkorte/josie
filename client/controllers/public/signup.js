@@ -58,7 +58,7 @@ Template.signup.rendered = function(){
                   alert(error.reason);
                   submitButton.button('reset');
                 } else {
-                  Router.go('/lists');
+                  FlowRouter.go('/lists');
                   submitButton.button('reset');
                 }
               });
