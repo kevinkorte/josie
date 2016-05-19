@@ -1,5 +1,7 @@
 var secret = Meteor.settings.private.stripe.testSecretKey;
 var Stripe = StripeAPI(secret);
+var Future = Npm.require('fibers/future');
+var Fiber = Npm.require('fibers');
 
 Meteor.methods({
 

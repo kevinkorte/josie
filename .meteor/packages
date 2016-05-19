@@ -24,6 +24,7 @@ accounts-base           # Meteor base package for dealing with accounts
 check                   # The ever important check package
 
 kadira:flow-router
+kadira:blaze-layout
 
 twbs:bootstrap
 fourseven:scss          # Love thy sass
