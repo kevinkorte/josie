@@ -23,9 +23,13 @@ accounts-password       # Meteor package for dealing with all things passwords
 accounts-base           # Meteor base package for dealing with accounts
 check                   # The ever important check package
 
+kadira:flow-router
+
+twbs:bootstrap
 fourseven:scss          # Love thy sass
 aldeed:collection2      # Collection package
 
 mrgalaxy:stripe         # Load in stripe assets
 momentjs:moment         # Dynamically deal with dates
 random                  # Random generator
+themeteorchef:jquery-validation
