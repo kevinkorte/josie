@@ -62,6 +62,7 @@ Meteor.methods({
                   if (error){
                     console.log(error);
                   } else {
+                    // Once the subscription data has been added, return to our Future.
                     newCustomer.return(user);
                   }
                 });

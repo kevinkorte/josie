@@ -14,8 +14,6 @@
       <input type="password" name="password" class="form-control" placeholder="Password">
     </div> <!-- end .form-group -->
     <h4 class="page-header">Payment Information</h4>
-    <label>Which plan sounds <em>amazing</em>?</label>
-    {{>selectPlan}}
     <div class="form-group">
       {{> Template.dynamic template="creditCard" data="signup"}}
     </div>

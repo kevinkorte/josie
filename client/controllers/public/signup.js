@@ -38,7 +38,7 @@ Template.signup.rendered = function(){
           name: $('[name="fullName"]').val(),
           emailAddress: $('[name="emailAddress"]').val(),
           password: $('[name="password"]').val(),
-          plan: $('[name="selectPlan"]:checked').val(),
+          plan: 'basic',
           token: $('[name="stripeToken"]').val()
         };
 
