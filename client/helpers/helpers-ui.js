@@ -10,11 +10,29 @@ UI.registerHelper('capitalize', function(string){
   }
 });
 
-/* MAY NOT NEED
-* Limit string
-* Return the proper string based on the number of lists.
-* Credit: Meteorchef
-*/
-UI.registerHelper('limitString', function(limit){
-  return limit > 1 ? limit + " lists" : limit + " lists";
+UI.registerHelper('plan', function(){
+  var user = Meteor.userId();
+      plan = Session.get('currentUserPlan_' + user);
+
+  if ( user ) {
+    Meteor.call('checkUserPlan', user, function(error, response){
+      if (error) {
+        alert(error.reason);
+      } else {
+        Session.set('currentUserPlan_' + user, response);
+      }
+    });
+  }
+  return plan;
+});
+
+UI.registerHelper('epochToString', function(timestamp){
+  if (timestamp){
+    var length = timestamp.toString().length;
+    if ( length = 10 ) {
+      return moment.unix(timestamp).format("MMMM Do, YYYY");
+    } else {
+      return moment.unix(timestamp / 1000).format("MMMM Do, YYYY");
+    }
+  }
 });

@@ -1,0 +1,25 @@
+<template name="billing">
+  <div class="panel panel-default billing-module">
+    <div class="panel-heading">
+      <h3 class="panel-title">Billing Overview</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item bm-block clearfix">
+          <span class="bm-block-label">Current Plan</span>
+          <div class="bm-block-content">
+            <span class="plan-name-quota"><strong>{{capitalize plan.subscription.plan.name}}</strong> &mdash;</span>
+          </div>
+        </li>
+        <li class="list-group-item bm-block clearfix">
+          <span class="bm-block-label">Payment</span>
+          <div class="bm-block-content">
+            <span><strong>{{plan.subscription.payment.card.type}}</strong> &mdash; {{plan.subscription.payment.card.lastFour}}</span>
+            <span>Next payment due: <strong>{{epochToString plan.subscription.payment.nextPaymentDue}}</strong></span>
+            <span>Amount: <strong>$12.00</strong></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
