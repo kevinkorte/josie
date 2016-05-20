@@ -53,6 +53,8 @@ Meteor.methods({
                     }
                   }
                 }
+                console.log(user);
+                console.log(subscription);
 
                 Meteor.users.update(user, {
                   $set: subscription
