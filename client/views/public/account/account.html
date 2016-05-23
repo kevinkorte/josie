@@ -1,0 +1,18 @@
+<template name="account">
+
+  <ul class="account-options">
+    <li class="account-items">
+      <div class="flex">
+        <div class="item">{{epochToString plan.subscription.payment.nextPaymentDue}}</div>
+        <div class="item"><a href="#" class="btn btn-link">Pause Plan</a></div>
+      </div>
+    </li>
+    <li class="account-items">
+      <div class="flex">
+        <div class="item">{{plan.subscription.payment.card.type}} ({{plan.subscription.payment.card.lastFour}})</div>
+        <div class="item"><a href="#" class="btn btn-link">Update Card</a></div>
+      </div>
+    </li>
+  </ul>
+
+</template>
