@@ -30,8 +30,10 @@ kadira:blaze-layout
 twbs:bootstrap
 fourseven:scss          # Love thy sass
 aldeed:collection2      # Collection package
+aldeed:autoform
 
 mrgalaxy:stripe         # Load in stripe assets
 momentjs:moment         # Dynamically deal with dates
 random                  # Random generator
 themeteorchef:jquery-validation
+jeremy:geocomplete

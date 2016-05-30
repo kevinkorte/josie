@@ -9,3 +9,14 @@ Meteor.publish('subscriptions', function(){
     return getLists;
   }
 });
+
+Meteor.publish('viewings.user', function() {
+    return [
+        Viewings.find({})
+    ];
+});
+
+Meteor.publish('viewings.single', function(id) {
+    check(id, String);
+    return Viewings.find({_id: id});
+});

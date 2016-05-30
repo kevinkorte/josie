@@ -1,0 +1,52 @@
+<template name="singleViewingEdit">
+  <div class="fluid-container">
+    <div class="row">
+      <div class="col-md-8">
+        <div id="map">{{> googleMap name="exampleMap" options=exampleMapOptions}}</div>
+      </div>
+      <div class="col-md-4">
+        {{#if Template.subscriptionsReady}}
+        {{#with viewing}}
+        {{#autoForm collection="Viewings" id="editViewings" type="update" doc=this}}
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+            <div class="panel-heading">Location</div>
+            <div class="panel-body">
+              {{> afQuickField name='address'}}
+              <div class="well well-sm">
+                <ul class="list-unstyled lat-lng-list">
+                  <li><span class="label label-default">Latitude</span> {{viewing.lat}}</li>
+                  <li><span class="label label-default">Longitude</span> {{viewing.lng}}</li>
+                </ul>
+              </div>
+            </div>
+          </div></div>
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">Clients</div>
+              <div class="panel-body">
+                Panel content
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">Followers</div>
+              <div class="panel-body">
+                Panel content
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/autoForm}}
+        {{/with}}
+        {{else}}
+            <p>Loading</p>
+    {{/if}}
+      </div>
+    </div>
+  </div>
+
+
+</template>
