@@ -10,11 +10,11 @@ Template.singleViewingEdit.helpers({
     // Make sure the maps API has loaded
     if (GoogleMaps.loaded()) {
       // Map initialization options
-      var id = FlowRouter.getParam('id');
-      var Lat;
-      var Lng;
-      Lat = Viewings.findOne({_id: id}).lat;
-      Lng = Viewings.findOne({_id: id}).lng;
+      // var id = FlowRouter.getParam('id');
+      // var Lat;
+      // var Lng;
+      Lat = Viewings.findOne().lat;
+      Lng = Viewings.findOne().lng;
       return {
         center: new google.maps.LatLng(Lat, Lng),
         zoom: 17

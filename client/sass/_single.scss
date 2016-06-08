@@ -1,6 +1,20 @@
-#map {
-  width: 100%;
-  height: 400px;
+.flex-container {
+  display: flex;
+}
+
+.info-bar {
+  height: 60px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 4px rgba(3,3,0,.9);
+
+  & .address {
+    font-size: 18px;
+  }
+}
+
+.map {
+  width: 70%;
+  height: 100vh;
 }
 
 //Remove default bootstrap border top

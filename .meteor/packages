@@ -21,6 +21,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 accounts-password       # Meteor package for dealing with all things passwords
 accounts-base           # Meteor base package for dealing with accounts
+accounts-ui             # Remove before flight
 check                   # The ever important check package
 meteortoys:allthings
 
@@ -31,9 +32,11 @@ twbs:bootstrap
 fourseven:scss          # Love thy sass
 aldeed:collection2      # Collection package
 aldeed:autoform
+aldeed:template-extension
 
 mrgalaxy:stripe         # Load in stripe assets
 momentjs:moment         # Dynamically deal with dates
 random                  # Random generator
 themeteorchef:jquery-validation
 jeremy:geocomplete
+utilities:avatar

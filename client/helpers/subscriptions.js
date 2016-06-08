@@ -24,5 +24,6 @@ Template.singleViewingEdit.onCreated(function() {
     self.autorun(function() {
         var id = FlowRouter.getParam('id');
         self.subscribe('viewings.single', id);
+        self.subscribe('this.user');
     });
 });

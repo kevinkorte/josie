@@ -20,3 +20,7 @@ Meteor.publish('viewings.single', function(id) {
     check(id, String);
     return Viewings.find({_id: id});
 });
+
+Meteor.publish('this.user', function() {
+  return this.userId;
+})
