@@ -12,5 +12,12 @@ Meteor.methods({
     } else {
       return false;
     }
-  }//ends check user plan
+  },//ends check user plan
+  getStatus: function(user){
+    check(user, String);
+    var getUser  = Meteor.users.findOne({"_id": user}, {fields: {"subscription": 1}}),
+    subscription = getUser.subscription;
+
+    return subscription.plan.name;
+  }
 })

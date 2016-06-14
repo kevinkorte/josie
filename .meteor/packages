@@ -40,3 +40,6 @@ random                  # Random generator
 themeteorchef:jquery-validation
 jeremy:geocomplete
 utilities:avatar
+
+#autopublish
+#insecure

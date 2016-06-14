@@ -22,5 +22,9 @@ Meteor.publish('viewings.single', function(id) {
 });
 
 Meteor.publish('this.user', function() {
-  return this.userId;
+  return Meteor.users.findOne();
+});
+
+Meteor.publish('user.payment', function() {
+  return Meteor.users.find();
 })

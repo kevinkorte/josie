@@ -1,8 +1,8 @@
 <template name="signup">
   <form id="application-signup" class="signup">
-    <h4 class="page-header">Account details</h4>
+    <h4 class="page-header">Sign Up</h4>
     <div class="form-group">
-      <label for="fullName">Full Name</label>
+      <label for="fullName">Name</label>
       <input type="text" name="fullName" class="form-control" placeholder="Full Name">
     </div> <!-- end .form-group -->
     <div class="form-group">
@@ -13,10 +13,6 @@
       <label for="password">Password</label>
       <input type="password" name="password" class="form-control" placeholder="Password">
     </div> <!-- end .form-group -->
-    <h4 class="page-header">Payment Information</h4>
-    <div class="form-group">
-      {{> Template.dynamic template="creditCard" data="signup"}}
-    </div>
     <div class="form-group">
       <input type="submit" class="btn btn-success btn-block" data-loading-text="Setting up your trial..." style="margin-top: 40px; margin-bottom: 20px;" value="Put me on the rocketship">
     </div> <!-- end .form-group -->

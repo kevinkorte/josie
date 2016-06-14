@@ -5,14 +5,13 @@ var Fiber = Npm.require('fibers');
 
 Meteor.methods({
 
-  stripeCreateCustomer: function(token, email){
-    check(token, String);
+  stripeCreateCustomer: function(email){
     check(email, String);
 
     var stripeCustomer = new Future();
 
     Stripe.customers.create({
-      source: token,
+
       email: email
     }, function(error, customer){
       if (error){
@@ -31,7 +30,7 @@ Meteor.methods({
 
     var stripeSubscription = new Future();
 
-    Stripe.customers.createSubscription(customer, {
+    Stripe.customers.createSubscription(customer,{
       plan: plan
     }, function(error, subscription){
       if (error) {

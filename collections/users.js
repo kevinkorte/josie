@@ -4,13 +4,13 @@
 
 Meteor.users.allow({
   insert: function(){
-    return false;
+    return true;
   },
   update: function(){
-    return false;
+    return true;
   },
   remove: function(){
-    return false;
+    return true;
   }
 });
 
