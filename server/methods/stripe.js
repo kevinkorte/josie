@@ -41,5 +41,41 @@ Meteor.methods({
     });
 
     return stripeSubscription.wait();
+  },
+
+  stripeSwapCard: function(token){
+    check(token, String);
+
+    var stripeSwapCard = new Future();
+
+    var user = Meteor.userId();
+    var getUser = Meteor.users.findOne({"_id": user}, {fields: {"customerId": 1}});
+
+    Stripe.customers.update(getUser.customerId, {
+      source: token
+    }, function(error, customer){
+      if(error) {
+        stripeSwapCard.return(error);
+      } else {
+        var card = {
+          lastFour: customer.sources.data[0].last4,
+          type: customer.sources.data[0].brand
+        }
+        Fiber(function() {
+          var update = {
+            auth: SERVER_AUTH_TOKEN,
+            user: user,
+            card: card
+          }
+          Meteor.call('updateUserCard', update, function(error, response){
+            if(error){
+              stripeSwapCard.return(error);
+            } else {
+              stripeSwapCard.return(response);
+            }
+          });
+        }).run();
+      }
+    })//ends Stripe.customers.update
   }
 })

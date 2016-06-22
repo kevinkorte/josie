@@ -38,8 +38,9 @@ mrgalaxy:stripe         # Load in stripe assets
 momentjs:moment         # Dynamically deal with dates
 random                  # Random generator
 themeteorchef:jquery-validation
+themeteorchef:bert
 jeremy:geocomplete
 utilities:avatar
 
 #autopublish
-#insecure
+insecure

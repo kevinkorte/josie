@@ -53,10 +53,6 @@ Meteor.methods({
                           trial_start: response.trial_start
                         }
                       }
-                      console.log(customer);
-                      console.log(stripeCustomer);
-                      console.log(response);
-
                     Meteor.users.update(user, {
                       $set: subscription
                     }, function(error, response){

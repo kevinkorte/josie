@@ -3,6 +3,12 @@
   <ul class="account-options">
     <li class="account-items">
       <div class="flex">
+        <div class="item">{{plan.subscription.plan.name_retail}}</div>
+        <div class="item"><a href="/account/add-card" class="btn btn-link">Add Card</a></div>
+      </div>
+    </li>
+    <li class="account-items">
+      <div class="flex">
         <div class="item">{{epochToString plan.subscription.payment.nextPaymentDue}}</div>
         <div class="item"><a href="#" class="btn btn-link">Pause Plan</a></div>
       </div>
@@ -11,6 +17,12 @@
       <div class="flex">
         <div class="item">{{plan.subscription.payment.card.type}} ({{plan.subscription.payment.card.lastFour}})</div>
         <div class="item"><a href="#" class="btn btn-link">Update Card</a></div>
+      </div>
+    </li>
+    <li class="account-items">
+      <div class="flex">
+        <div class="item">{{plan.subscription.payment.card.type}} ({{plan.subscription.payment.card.lastFour}})</div>
+        <div class="item"><a href="/account/add-card" class="btn btn-link">Add Card</a></div>
       </div>
     </li>
   </ul>
