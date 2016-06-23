@@ -36,3 +36,26 @@ UI.registerHelper('epochToString', function(timestamp){
     }
   }
 });
+
+UI.registerHelper('cardExists', function(){
+  var user = Meteor.userId();
+      subscription = Session.get('currentUserPlan_' + user);
+      if ( user && subscription ) {
+        if ( typeof subscription.subscription.payment !== 'undefined' ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+});
+
+/*
+* If Equals
+* Take the two passed values and compare them, returning true if they're equal
+* and false if they're not.
+*/
+
+UI.registerHelper('equals', function(c1,c2){
+  // If case1 is equal to case2, return true, else false.
+  return c1 == c2 ? true : false;
+});

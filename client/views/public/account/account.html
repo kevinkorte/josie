@@ -1,5 +1,17 @@
 <template name="account">
 
+  {{#if equals plan.subscription.status "trialing"}}
+    <li class="list-group-item list-group-item-info">
+      <p>You're trialing until {{epochToString plan.subscription.trial_end}}. <a href="#" class="cancel-subscription">Cancel Subscription</a>.</p>
+    </li>
+  {{/if}}
+
+  {{#if equals plan.subscription.status "canceled"}}
+    <li class="list-group-item list-group-item-danger">
+      <p>Your subscription will end on {{epochToString plan.subscription.ends}}. Change of heart? <a href="#">Resubscribe</a>.</p>
+    </li>
+  {{/if}}
+
   <ul class="account-options">
     <li class="account-items">
       <div class="flex">
@@ -13,18 +25,20 @@
         <div class="item"><a href="#" class="btn btn-link">Pause Plan</a></div>
       </div>
     </li>
+    {{#if cardExists}}
     <li class="account-items">
       <div class="flex">
         <div class="item">{{plan.subscription.payment.card.type}} ({{plan.subscription.payment.card.lastFour}})</div>
         <div class="item"><a href="#" class="btn btn-link">Update Card</a></div>
       </div>
     </li>
+    {{else}}
     <li class="account-items">
       <div class="flex">
-        <div class="item">{{plan.subscription.payment.card.type}} ({{plan.subscription.payment.card.lastFour}})</div>
         <div class="item"><a href="/account/add-card" class="btn btn-link">Add Card</a></div>
       </div>
     </li>
+    {{/if}}
   </ul>
 
 </template>
