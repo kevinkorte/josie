@@ -8,7 +8,7 @@
 
   {{#if equals plan.subscription.status "canceled"}}
     <li class="list-group-item list-group-item-danger">
-      <p>Your subscription will end on {{epochToString plan.subscription.ends}}. Change of heart? <a href="#">Resubscribe</a>.</p>
+      <p>Your subscription will end on {{epochToString plan.subscription.ends}}. Change of heart? <a href="/account/resubscribe">Resubscribe</a>.</p>
     </li>
   {{/if}}
 
